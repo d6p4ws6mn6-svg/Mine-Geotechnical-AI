@@ -1,0 +1,39 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python bytecode / cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Model artifacts: ignore everything except what mine_app_streamlit.py's
+# load_models() actually loads. random_forest.joblib (60MB, unused since RF
+# was removed from the pipeline) and stacking_meta.joblib stay ignored/
+# regenerable from the notebook.
+model_artifacts/*
+!model_artifacts/config.json
+!model_artifacts/scaler.joblib
+!model_artifacts/label_encoder.joblib
+!model_artifacts/xgb_classifier.joblib
+!model_artifacts/xgb_regressor.joblib
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+*.env.local
+
+# Claude Code local settings
+.claude/settings.local.json
